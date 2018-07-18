@@ -1,0 +1,17 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "tx_id", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "tx_name", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "tx_rate", 
+    "type": "FLOAT"
+  }
+]

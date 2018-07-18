@@ -1,0 +1,17 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "th_t_id", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "th_dts", 
+    "type": "DATETIME"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "th_st_id", 
+    "type": "STRING"
+  }
+]

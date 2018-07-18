@@ -1,0 +1,34 @@
+{
+  "csvOptions": {
+    "allowJaggedRows": false, 
+    "allowQuotedNewlines": false, 
+    "encoding": "UTF-8", 
+    "fieldDelimiter": "|", 
+    "quote": "\"", 
+    "skipLeadingRows": 0
+  }, 
+  "schema": {
+    "fields": [
+      {
+        "name": "inv_date_sk", 
+        "type": "INTEGER"
+      }, 
+      {
+        "name": "inv_item_sk", 
+        "type": "INTEGER"
+      }, 
+      {
+        "name": "inv_warehouse_sk", 
+        "type": "INTEGER"
+      }, 
+      {
+        "name": "inv_quantity_on_hand", 
+        "type": "INTEGER"
+      }
+    ]
+  }, 
+  "sourceFormat": "CSV", 
+  "sourceUris": [
+    "gs://da304-staging/inventory.dat"
+  ]
+}

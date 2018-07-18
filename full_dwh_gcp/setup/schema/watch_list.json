@@ -1,0 +1,12 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "wl_id", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "wl_c_id", 
+    "type": "INTEGER"
+  }
+]

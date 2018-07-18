@@ -1,0 +1,27 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "ap_ca_id", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "ap_acl", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "ap_tax_id", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "ap_l_name", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "ap_f_name", 
+    "type": "STRING"
+  }
+]

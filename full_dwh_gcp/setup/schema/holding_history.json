@@ -1,0 +1,22 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "hh_h_t_id", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "hh_t_id", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "hh_before_qty", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "hh_after_qty", 
+    "type": "INTEGER"
+  }
+]

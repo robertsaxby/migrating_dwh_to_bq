@@ -1,0 +1,37 @@
+{
+  "csvOptions": {
+    "allowJaggedRows": false, 
+    "allowQuotedNewlines": false, 
+    "encoding": "UTF-8", 
+    "fieldDelimiter": "|", 
+    "quote": "\"", 
+    "skipLeadingRows": 0
+  }, 
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED", 
+        "name": "ct_t_id", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "ct_dts", 
+        "type": "DATETIME"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "ct_amt", 
+        "type": "FLOAT"
+      }, 
+      {
+        "name": "ct_name", 
+        "type": "STRING"
+      }
+    ]
+  }, 
+  "sourceFormat": "CSV", 
+  "sourceUris": [
+    "gs://da304_staging_uc2/cash_transaction.txt"
+  ]
+}

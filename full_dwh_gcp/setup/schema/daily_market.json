@@ -1,0 +1,32 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "dm_date", 
+    "type": "DATE"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "dm_s_symb", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "dm_close", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "dm_high", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "dm_low", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "dm_vol", 
+    "type": "INTEGER"
+  }
+]

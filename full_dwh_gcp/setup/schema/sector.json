@@ -1,0 +1,12 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "sc_id", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "sc_name", 
+    "type": "STRING"
+  }
+]

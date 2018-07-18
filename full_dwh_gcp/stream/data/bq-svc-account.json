@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "clbridge-analytics",
+  "private_key_id": "b03eb5b85e606af196276383edc45baf34174230",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQC8d5e/JvUVBmU2\nLnQ71bo/ZJ3Psg2rpdWt0yYz3K44fql4wJkRS3J6PhDk0i5kAbyxpbiWlxAoglbU\n86DB0HjwO6lAhicXKKKcUfhgO+pbhW/BoJp8QwGpoB0IM4zadrvd6ev+4B4BW92Q\nBdj/CJ3onPCZNh7AJ4qP2/JpGlX3jSe3pqtS2B+jtOV7QjxIdGQOZxajPtsZxJci\nw6a8HZ/fQmP74AI5ygNn9Lhr31XbV2TU+8Cb4QCbbKHdxZc+1oZ6OXp+q6JxOm16\n5I4cnyhPIpolILmUS7zVnJIQRbUjA8IEEKwXX14CJm9Rbsx33QVntXdND9VwGIht\npp7ARfmZAgMBAAECggEAAw6RiIkyOngTFjDks7/AuJyCLsc9j4YuFBazrO2sacAs\nMYg2M2Cc57yv+3YpSHf6vorolpC2s2GB1QxqlBo0i/j7ws8qPSbslEqEE9OE9p0Q\ndfyL5O4VTdIKBoMHiteYLn5H1Kd/9RevXVGq9mAGZ6p8AJAvKYC6r6CqqufBczVw\nvr0B4rtJIO4IMsWoAKzQKkaZL77UBMLeHM6kSsVaQJdFcNO8tH82OzHtEkCs6ta/\nXemNnWgKyZPVpoCCrJfJ2tEIoVUVO9cePQ6NPr/ESf7OyedWp6evxgYfPfqMCpFh\nVob9BzFoZMeiJI7QmcHl7iQMKMQbtN6nDSuffSMjPQKBgQD12RNrZlxZgK7/I6Xq\nzWML1QE4HnY2s2KXK/4WFNW7ni9lesEEKcWSUxlBC4JeAi4U127WIQtUuB0FCzgI\noadOm/4cniXaW1xdzElsST8Ua+Ei6C/ixkThx0Vb5g+r/2N5yvkahDHzbovtuu9s\nAhn0wlc7h59B5kn7ay9M1L1dEwKBgQDEP+3kOzFkTw5MQnPp2E//lAGS0OG+v8Hh\nN19uHZzl9B/AGzVC4goL1fadoACwriJHZw1kG4ynZ2AswagBdsgJPhu17o9HQtFH\nRWor3jWuzBzpdb7aazSCgEcDFcqfJbEpqP+XyvHKYYE85+hW7g5HTfP0xZ2890wK\nhglX/5zAIwKBgQDiWj8a/1+/uE9m8bdtfDTZTACXXtSQgJEhhoumYQB4gag50s+r\nuZoCoyf5T1N0oqUy4zdVR49bLTjqz+2DZPLZ2Z4ZUzKe3McqRVDEtpuxfbIHpaeR\nL+NzzTj659M+FSHNnSfFVjl3XCzRcO/Hjhe/1r7iPHhRAGrVZVZjcuv2qQKBgQCP\nO3mNEgbCh1CQKBAhpFb+2i8r0Hhyl9IRZjCoVcSlsL9bnoAJCKD8cnVEJfta+Dzc\nkEIdxl2p8LEo+U59gwwMcuAWsL6x6/qCYg9TZSMZKLARVHavQ39Xn/g0MDtqXEAp\nf8bMKrq+UtvYcAoLKEQTlrlu9KxjtroxFBLNvynQsQKBgQDV4Sd7RwGn0QSyG/rI\n/Wj6bbQ4RdLSSPDkTC3fBG8bpmYKpXKPgC1PkfDNVdYbbqdQGG8J6+pMgkSA/55K\nz95+pqmrX6K7akmrm/zynem4kca4GJ/0hTYivSXck+p/BnyBUlZOHSiXx8vq0/59\njF+MUFO/U5TBK+jgse8hnuhyEA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "da304cloudnext@clbridge-analytics.iam.gserviceaccount.com",
+  "client_id": "101290391613357507629",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://accounts.google.com/o/oauth2/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/da304cloudnext%40clbridge-analytics.iam.gserviceaccount.com"
+}

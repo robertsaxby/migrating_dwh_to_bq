@@ -1,0 +1,30 @@
+{
+  "csvOptions": {
+    "allowJaggedRows": false, 
+    "allowQuotedNewlines": false, 
+    "encoding": "UTF-8", 
+    "fieldDelimiter": "|", 
+    "quote": "\"", 
+    "skipLeadingRows": 0
+  }, 
+  "schema": {
+    "fields": [
+      {
+        "name": "ib_income_band_sk", 
+        "type": "INTEGER"
+      }, 
+      {
+        "name": "ib_lower_bound", 
+        "type": "INTEGER"
+      }, 
+      {
+        "name": "ib_upper_bound", 
+        "type": "INTEGER"
+      }
+    ]
+  }, 
+  "sourceFormat": "CSV", 
+  "sourceUris": [
+    "gs://da304-staging/income_band.dat"
+  ]
+}
