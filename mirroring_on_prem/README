@@ -1,0 +1,9 @@
+Use case 1: Mirroring On-prem
+Data: TPC-DS data (sales data)
+0_bq_external_create.sh -> creates external tables for files in GCS
+1_bq_create.sh -> DDL for BQ tables
+setup.sh -> creates datasets in BQ
+generate_data.sh -> generates data as per TPC-DS norm
+schema/* table schema to be used for external table creation in 0_bq_external_create.sh
+dags/da304-materialize-q1.py -> Airflow DAG to materialize bq_mat_channel_sales.sql into sales_by_channel table in BQ
+dags/bq_mat_channel_sales.sql -> sales by various channels for every fortnight ! to be materialzed by the Airflow DAG
