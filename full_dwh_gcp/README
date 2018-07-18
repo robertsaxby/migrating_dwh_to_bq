@@ -1,4 +1,4 @@
-use case 2: DWH completely migrated to GCP !
+use case 2a: DWH completely migrated to GCP !
 setup/0_bq_external_create.sh -> create external tables on OLTP data - staging area GCS
 setup/1_bq_create.sh -> create tables in BQ for the external data -> not really used in the demo, but can be used to highlight the fact that BQ can infacy be a staging area for RAW data partitioned by day !
 setup/schema -> schema used by external tables script to created federated tables in BQ
@@ -11,3 +11,11 @@ elt/dags/query/security.sql -> join of security, company, exchange, status, addr
 elt/dags/query/trade.sql -> join of trade , trade_type and status tables - fact
 
 The SQL's are executed by the elt/dags/da304-full-dwh-gcp-daily.py DAG !
+
+use case 2b: Stream data into BQ, DML capabilities 
+stream/data/stream.py -> python script to stream Trade data into BQ trade table. reads a file and loops
+stream/setup/create_trade_streaming_table.sh -> create streaming table "Trade" in BQ
+stream/1_before_wrong_upate.sh -> BQ query to show curremt state of table
+stream/2_wrong_update.sh -> BQ query to perform incorrect update (update of all rows belonging to a customer instead of customer and symbol ! )
+stream/3_fix_erroneous_update.sh -> series of BQ queries to fetch data from BQ snapshot to recover from erroneous update and performing the correct update !
+
