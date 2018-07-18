@@ -1,0 +1,13 @@
+use case 2: DWH completely migrated to GCP !
+setup/0_bq_external_create.sh -> create external tables on OLTP data - staging area GCS
+setup/1_bq_create.sh -> create tables in BQ for the external data -> not really used in the demo, but can be used to highlight the fact that BQ can infacy be a staging area for RAW data partitioned by day !
+setup/schema -> schema used by external tables script to created federated tables in BQ
+
+elt/dags/da304-full-dwh-gcp-daily.py -> ELT to load and tranbform OLTP data into a star schema within BQ
+elt/dags/query/broker.sql -> join of broker table and status table - dimension
+elt/dags/query/company.sql -> join of company table, address, industry and status table - dimension
+elt/dags/query/customer_account.sql -> join of customer_account, customer, address, status tables. - dimension
+elt/dags/query/security.sql -> join of security, company, exchange, status, address tables - dimension
+elt/dags/query/trade.sql -> join of trade , trade_type and status tables - fact
+
+The SQL's are executed by the elt/dags/da304-full-dwh-gcp-daily.py DAG !
