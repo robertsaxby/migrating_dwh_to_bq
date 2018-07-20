@@ -1,0 +1,38 @@
+{
+  "csvOptions": {
+    "allowJaggedRows": false, 
+    "allowQuotedNewlines": false, 
+    "encoding": "UTF-8", 
+    "fieldDelimiter": "|", 
+    "quote": "\"", 
+    "skipLeadingRows": 0
+  }, 
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED", 
+        "name": "tt_id", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "tt_name", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "tt_is_sell", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "tt_is_mrkt", 
+        "type": "INTEGER"
+      }
+    ]
+  }, 
+  "sourceFormat": "CSV", 
+  "sourceUris": [
+    "gs://da304_staging_uc2/trade_type.txt"
+  ]
+}

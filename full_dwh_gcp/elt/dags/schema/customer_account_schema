@@ -1,0 +1,47 @@
+{
+  "csvOptions": {
+    "allowJaggedRows": false, 
+    "allowQuotedNewlines": false, 
+    "encoding": "UTF-8", 
+    "fieldDelimiter": "|", 
+    "quote": "\"", 
+    "skipLeadingRows": 0
+  }, 
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED", 
+        "name": "ca_id", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "ca_b_id", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "ca_c_id", 
+        "type": "INTEGER"
+      }, 
+      {
+        "name": "ca_name", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "ca_tax_st", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "ca_bal", 
+        "type": "FLOAT"
+      }
+    ]
+  }, 
+  "sourceFormat": "CSV", 
+  "sourceUris": [
+    "gs://da304_staging_uc2/customer_account.txt"
+  ]
+}

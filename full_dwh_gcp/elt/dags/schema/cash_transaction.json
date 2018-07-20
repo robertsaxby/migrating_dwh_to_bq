@@ -1,0 +1,21 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "ct_t_id", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "ct_dts", 
+    "type": "DATETIME"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "ct_amt", 
+    "type": "FLOAT"
+  }, 
+  {
+    "name": "ct_name", 
+    "type": "STRING"
+  }
+]

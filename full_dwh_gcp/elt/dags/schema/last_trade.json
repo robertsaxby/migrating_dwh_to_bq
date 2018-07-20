@@ -1,0 +1,27 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "lt_s_symb", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "lt_dts", 
+    "type": "DATETIME"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "lt_price", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "lt_open_price", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "lt_vol", 
+    "type": "INTEGER"
+  }
+]

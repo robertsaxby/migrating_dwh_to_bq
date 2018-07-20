@@ -1,0 +1,12 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "nx_ni_id", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "nx_co_id", 
+    "type": "INTEGER"
+  }
+]

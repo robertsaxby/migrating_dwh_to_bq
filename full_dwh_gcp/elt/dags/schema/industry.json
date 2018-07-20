@@ -1,0 +1,17 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "in_id", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "in_name", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "in_sc_id", 
+    "type": "STRING"
+  }
+]

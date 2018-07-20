@@ -1,0 +1,72 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_co_id", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_year", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_qtr", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_qtr_start_date", 
+    "type": "DATE"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_revenue", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_net_earn", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_basic_eps", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_dilut_eps", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_margin", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_inventory", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_assets", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_liability", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_out_basic", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "fi_out_dilut", 
+    "type": "INTEGER"
+  }
+]

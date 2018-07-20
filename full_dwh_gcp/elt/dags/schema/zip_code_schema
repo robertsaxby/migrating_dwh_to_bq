@@ -1,0 +1,33 @@
+{
+  "csvOptions": {
+    "allowJaggedRows": false, 
+    "allowQuotedNewlines": false, 
+    "encoding": "UTF-8", 
+    "fieldDelimiter": "|", 
+    "quote": "\"", 
+    "skipLeadingRows": 0
+  }, 
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED", 
+        "name": "zc_code", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "zc_town", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "zc_div", 
+        "type": "STRING"
+      }
+    ]
+  }, 
+  "sourceFormat": "CSV", 
+  "sourceUris": [
+    "gs://da304_staging_uc2/zip_code.txt"
+  ]
+}

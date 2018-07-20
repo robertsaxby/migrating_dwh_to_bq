@@ -1,0 +1,63 @@
+{
+  "csvOptions": {
+    "allowJaggedRows": false, 
+    "allowQuotedNewlines": false, 
+    "encoding": "UTF-8", 
+    "fieldDelimiter": "|", 
+    "quote": "\"", 
+    "skipLeadingRows": 0
+  }, 
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED", 
+        "name": "co_id", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "co_st_id", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "co_name", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "co_in_id", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "co_sp_rate", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "co_ceo", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "co_ad_id", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "co_desc", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "co_open_date", 
+        "type": "DATE"
+      }
+    ]
+  }, 
+  "sourceFormat": "CSV", 
+  "sourceUris": [
+    "gs://da304_staging_uc2/company.txt"
+  ]
+}

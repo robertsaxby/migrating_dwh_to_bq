@@ -1,4 +1,4 @@
-#!/bin/bash
+{%
 declare -a tables=("account_permission" 
 "address" 
 "broker " 
@@ -39,8 +39,8 @@ for table in ${tables[@]}
 do
 	echo ${table}
 	`bq show --schema --format=prettyjson da304_uc2.${table} > ./schema/${table}.json`
-	`bq mkdef --noautodetect --source_format=CSV gs://da304_staging_uc2/${table}.txt ./schema/${table}.json > ./schema/${table}_schema`
+	`bq mkdef --noautodetect --source_format=CSV gs://da304_staging_uc2/{{params.partition_date }}/${table}.txt ./schema/${table}.json > ./schema/${table}_schema`
 	`ex -sc '%s/\"fieldDelimiter\": \"\,\"/\"fieldDelimiter\": \"|\"/g|x' schema/${table}_schema`
 	echo `bq mk --external_table_definition=./schema/${table}_schema da304_staging_uc2.${table}`
 done
-
+%}

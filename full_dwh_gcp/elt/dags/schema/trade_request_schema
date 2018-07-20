@@ -1,0 +1,48 @@
+{
+  "csvOptions": {
+    "allowJaggedRows": false, 
+    "allowQuotedNewlines": false, 
+    "encoding": "UTF-8", 
+    "fieldDelimiter": "|", 
+    "quote": "\"", 
+    "skipLeadingRows": 0
+  }, 
+  "schema": {
+    "fields": [
+      {
+        "mode": "REQUIRED", 
+        "name": "tr_t_id", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "tr_tt_id", 
+        "type": "STRING"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "tr_s_symb", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "tr_qty", 
+        "type": "INTEGER"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "tr_bid_price", 
+        "type": "FLOAT"
+      }, 
+      {
+        "mode": "REQUIRED", 
+        "name": "tr_b_id", 
+        "type": "INTEGER"
+      }
+    ]
+  }, 
+  "sourceFormat": "CSV", 
+  "sourceUris": [
+    "gs://da304_staging_uc2/trade_request.txt"
+  ]
+}

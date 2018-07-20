@@ -1,0 +1,36 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "ex_id", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "ex_name", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "ex_num_symb", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "ex_open", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "ex_close", 
+    "type": "INTEGER"
+  }, 
+  {
+    "name": "ex_desc", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "ex_ad_id", 
+    "type": "INTEGER"
+  }
+]

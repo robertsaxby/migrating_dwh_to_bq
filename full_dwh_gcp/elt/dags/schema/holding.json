@@ -1,0 +1,32 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "h_t_id", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "h_ca_id", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "h_s_symb", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "h_dts", 
+    "type": "DATETIME"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "h_price", 
+    "type": "FLOAT"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "h_qty", 
+    "type": "INTEGER"
+  }
+]

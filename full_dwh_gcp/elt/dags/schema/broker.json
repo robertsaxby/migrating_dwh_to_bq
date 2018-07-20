@@ -1,0 +1,27 @@
+[
+  {
+    "mode": "REQUIRED", 
+    "name": "b_id", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "b_st_id", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "b_name", 
+    "type": "STRING"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "b_num_trades", 
+    "type": "INTEGER"
+  }, 
+  {
+    "mode": "REQUIRED", 
+    "name": "b_comm_total", 
+    "type": "FLOAT"
+  }
+]
