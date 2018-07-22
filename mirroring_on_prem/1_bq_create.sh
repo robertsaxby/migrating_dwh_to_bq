@@ -594,6 +594,6 @@ id	STRING,
 sales	FLOAT,
 returns	FLOAT,
 profit	FLOAT,
-d_date DATE
+partition_date DATE
 )
-PARTITION BY d_date'
+PARTITION BY partition_date'

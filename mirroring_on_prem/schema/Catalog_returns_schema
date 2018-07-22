@@ -5,7 +5,7 @@
     "encoding": "UTF-8", 
     "fieldDelimiter": "|", 
     "quote": "\"", 
-    "skipLeadingRows": 0
+    "skipLeadingRows": 1
   }, 
   "schema": {
     "fields": [
@@ -116,11 +116,81 @@
       {
         "name": "cr_net_loss", 
         "type": "FLOAT"
+      }, 
+      {
+        "name": "d_date", 
+        "type": "DATE"
+      }, 
+      {
+        "name": "d_year", 
+        "type": "INTEGER"
       }
     ]
   }, 
   "sourceFormat": "CSV", 
   "sourceUris": [
-    "gs://da304-staging/catalog_returns.dat"
+    "gs://da304-staging/${NEXT_DATE}/${table}.csv", 
+    "gs://da304-staging/2018-06-02/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-03/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-04/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-05/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-06/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-07/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-08/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-09/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-10/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-11/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-12/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-13/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-14/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-15/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-16/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-17/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-18/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-19/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-20/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-21/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-22/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-23/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-24/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-25/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-26/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-27/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-28/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-29/Catalog_returns.csv", 
+    "gs://da304-staging/2018-06-30/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-01/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-02/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-03/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-04/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-05/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-06/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-07/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-08/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-09/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-10/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-11/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-12/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-13/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-14/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-15/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-16/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-17/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-18/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-19/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-20/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-21/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-22/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-23/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-24/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-25/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-26/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-27/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-28/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-29/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-30/Catalog_returns.csv", 
+    "gs://da304-staging/2018-07-31/Catalog_returns.csv", 
+    "gs://da304-staging/2018-08-01/Catalog_returns.csv", 
+    "gs://da304-staging/2018-08-02/Catalog_returns.csv"
   ]
 }

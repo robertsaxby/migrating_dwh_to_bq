@@ -25,8 +25,8 @@
 		   ) salesreturns,
 		     `da304.Store`
 		 where 
-		        d_date between cast('{{params.date_start}}' as date)
-		                  and DATE_ADD(cast('{{params.date_start}}' as date), INTERVAL 14 DAY)
+		        d_date between DATE_SUB(cast('{{params.date_start}}' as date), INTERVAL 14 DAY)
+		                  and cast('{{params.date_start}}' as date)
 		       and store_sk = s_store_sk
 		 group by s_store_id,d_date)
 		 ,
@@ -55,8 +55,8 @@
 		    from `da304.Catalog_returns`
 		   ) salesreturns,
 		     `da304.Catalog_page`
-		 where  d_date between cast('{{params.date_start}}' as date)
-		                  and DATE_ADD(cast('{{params.date_start}}'as date), INTERVAL 14 DAY)
+		 where  d_date between DATE_SUB(cast('{{params.date_start}}' as date), INTERVAL 14 DAY)
+                                                  and cast('{{params.date_start}}' as date)
 		       and page_sk = cp_catalog_page_sk
 		 group by cp_catalog_page_id,d_date)
 		 ,
@@ -87,20 +87,21 @@
 		           and wr_order_number = ws_order_number)
 		   ) salesreturns,
 		     `da304.Web_site` 
-		 where  salesreturns.d_date between cast('{{params.date_start}}' as date)
-		                  and DATE_ADD(cast('{{params.date_start}}' as date), INTERVAL 14 DAY)
+		 where  salesreturns.d_date between DATE_SUB(cast('{{params.date_start}}' as date), INTERVAL 14 DAY)
+                                                  and cast('{{params.date_start}}' as date)
 		       and wsr_web_site_sk = web_site_sk
 		 group by web_site_id,d_date)
      
 		  select  channel
 		        , id
-            , date
+                        , cast('{{params.date_start}}' as date)  as partition_date
 		        , sum(sales) as sales
 		        , sum(returns) as returns
 		        , sum(profit) as profit
+                        
 		 from
 		 (select 'store channel' as channel
-            ,d_date as date
+                        ,d_date as date
 		        , CONCAT('store', CAST(s_store_id as string)) as id
 		        , sales
 		        , returns
@@ -109,25 +110,25 @@
 		 union all
 		 select 'catalog channel' as channel
 		        , d_date as date
-            , CONCAT('catalog_page', CAST(cp_catalog_page_id as string)) as id
+                        , CONCAT('catalog_page', CAST(cp_catalog_page_id as string)) as id
 		        , sales
 		        , returns
 		        , (profit - profit_loss) as profit
 		 from csr
 		 union all
 		 select 'web channel' as channel
-            ,d_date as date
+                        ,d_date as date
 		        , CONCAT('web_site', CAST(web_site_id as string)) as id
 		        , sales
 		        , returns
 		        , (profit - profit_loss) as profit
 		 from  wsr
 		 ) x
-		 group by rollup (channel, id, date)
-     having channel IS NOT NULL and id IS NOT NULL
+		 group by rollup (channel, id, partition_date)
+                 having channel IS NOT NULL and id IS NOT NULL
 		 order by channel
-		         ,id
-		 limit 100;
+		         ,id;
+		 
 
 
 

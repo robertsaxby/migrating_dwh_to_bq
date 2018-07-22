@@ -78,5 +78,13 @@
   {
     "name": "sr_net_loss", 
     "type": "FLOAT"
+  },
+  {
+    "name": "d_date", 
+    "type": "DATE"
+  },
+  {
+    "name": "d_year", 
+    "type": "INTEGER"
   }
 ]

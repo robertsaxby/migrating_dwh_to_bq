@@ -134,5 +134,13 @@
   {
     "name": "ws_net_profit", 
     "type": "FLOAT"
+  },
+  {
+    "name": "d_date", 
+    "type": "DATE"
+  },
+  {
+    "name": "d_year", 
+    "type": "INTEGER"
   }
 ]
