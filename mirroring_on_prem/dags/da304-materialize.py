@@ -36,6 +36,8 @@ default_dag_args = {
 
 }
 
+fact_tables=['Store_sales','Store_returns','Catalog_sales','Catalog_returns','Web_sales','Web_returns' ]
+dim_tables=['Store','Catalog_page','Date_dim','Web_site']
 # Define a DAG (directed acyclic graph) of tasks.
 # Any task you create within the context manager is automatically added to the
 # DAG object.
@@ -53,7 +55,7 @@ dag_daily = models.DAG(
 
 def deleteStagingTablesTask(table):
     return BigQueryOperator(
-            task_id='delete_{0}'.format(table),
+            task_id='delete_staging_{0}'.format(table),
             bql = '''
                 DROP TABLE IF EXISTS {{params.table}}
             ''',
@@ -62,7 +64,7 @@ def deleteStagingTablesTask(table):
             dag=dag_daily)
 
 
-def createDimensionStagingDagTasks() :
+def createDimensionStagingTables() :
     def createTaskHelper(table):
         
             return GoogleCloudStorageToBigQueryOperator(
@@ -79,36 +81,38 @@ def createDimensionStagingDagTasks() :
                         task_id="Complete_dim_staging",
                         dag=dag_daily)
      
-    tables=['Store','Catalog_page','Date_dim','Web_site']
-    for table in tables:
+    for table in dim_tables:
             deleteStagingTablesTask(table) >> createTaskHelper(table) >> materializeDimensionTables(table) >> complete_dim_stage
 
     return complete_dim_stage
 
 
 
-def createFactStagingTables():
+def createFactStagingTables(dep_dag):
     def createTaskHelper(table):
            return GoogleCloudStorageToBigQueryOperator(
                 task_id = 'create_staging_{0}'.format(table),
                 skip_leading_rows=1,
                 field_delimiter = '|',
                 schema_object = 'schema/{0}.json'.format(table),
-                source_objects = ['{0}/{1}.csv'.format(job_run_date,table)],
+                source_objects = ['{0}/{1}/{2}.csv'.format('facts',job_run_date,table)],
                 bucket = 'da304-staging',
                 destination_project_dataset_table = "{0}.{1}".format(BQ_STAGING_DATASET_NAME,table),
                 external_table = True,
                 dag=dag_daily)
-
-    tables=['Store_sales','Store_returns','Catalog_sales','Catalog_returns','Web_sales','Web_returns' ]
+    
     complete_fact_stage= DummyOperator(
-                        task_id="Complete_Fact_Staging",
+                        task_id="Complete_Fact_Materialization",
                         dag=dag_daily)
-
-    for table in tables:
+    if dep_dag != None:
+        for table in fact_tables:
+            dep_dag >> deleteStagingTablesTask(table) >> createTaskHelper(table) >> materializeFactTables(table) >> complete_fact_stage
+    else:
+        for table in fact_tables:
             deleteStagingTablesTask(table) >> createTaskHelper(table) >> materializeFactTables(table) >> complete_fact_stage
 
     return complete_fact_stage
+
 
 
 def materializeDimensionTables(table):
@@ -152,6 +156,7 @@ materialize_q1 = BigQueryOperator(
         dag=dag_daily)
 
 if loadDimension == 'yes': 
-    createDimensionStagingDagTasks() >> createFactStagingTables() >> materialize_q1
-else:
-    createFactStagingTables() >> materialize_q1
+    dim_dag = createDimensionStagingTables()
+    createFactStagingTables(dim_dag) >> materialize_q1
+else: 
+    createFactStagingTables(None) >> materialize_q1

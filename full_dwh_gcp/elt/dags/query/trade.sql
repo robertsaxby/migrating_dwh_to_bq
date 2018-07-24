@@ -2,7 +2,7 @@
 
   SELECT
   t_id,
-  t_dts,
+  cast(t_dts as timestamp) as t_dts,
   t_is_cash,
   t_s_symb,
   t_qty,
@@ -17,8 +17,7 @@
   st.st_name,
   tt.tt_name,
   tt.tt_is_sell,
-  tt.tt_is_mrkt,
-  cast('{{params.created_date}}' as date) as created_date
+  tt.tt_is_mrkt
 FROM
   `da304_staging_uc2.trade`
 left join   `da304_staging_uc2.status_type` st on  t_st_id = st.st_id

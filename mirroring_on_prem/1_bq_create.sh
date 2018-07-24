@@ -591,9 +591,9 @@ bq query --use_legacy_sql=false'
 create or replace table da304.sales_by_channel(
 channel	STRING,
 id	STRING,
-sales	FLOAT,
-returns	FLOAT,
-profit	FLOAT,
+cumulative_sales    FLOAT64,
+cumulative_returns  FLOAT64,
+cumulative_profit   FLOAT64,
 partition_date DATE
 )
 PARTITION BY partition_date'

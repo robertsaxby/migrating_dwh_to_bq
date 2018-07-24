@@ -4,12 +4,12 @@ declare -a tables=("Catalog_returns" "Catalog_sales" "Store_returns" "Store_sale
 DATE=2018-06-01
 for table in ${tables[@]}
 do
-    uris="gs://da304-staging/facts/${DATE}/${table}.csv"
+    uris='gs://da304-staging/${NEXT_DATE}/${table}.csv'
     for i in {1..62}
     do
        NEXT_DATE=$(date +%Y-%m-%d -d "$DATE + $i day")
 #	`bq show --schema --format=prettyjson da304.${table} > ${table}.json`
-        uris+=",gs://da304-staging/facts/${NEXT_DATE}/${table}.csv"
+        uris+=",gs://da304-staging/${NEXT_DATE}/${table}.csv"
     done
     echo ${uris}
         `bq mkdef --noautodetect --source_format=CSV ${uris} ./schema/${table}.json > schema/${table}_schema`

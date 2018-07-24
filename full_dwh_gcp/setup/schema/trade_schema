@@ -87,6 +87,6 @@
   }, 
   "sourceFormat": "CSV", 
   "sourceUris": [
-    "gs://da304_staging_uc2/trade.txt"
+    "gs://da304_staging_uc2/2018-06-01/trade.txt"
   ]
 }

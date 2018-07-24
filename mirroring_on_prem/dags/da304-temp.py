@@ -94,7 +94,7 @@ def createFactStagingTables():
                 skip_leading_rows=1,
                 field_delimiter = '|',
                 schema_object = 'schema/{0}.json'.format(table),
-                source_objects = ['{0}/{1}.csv'.format(job_run_date,table)],
+                source_objects = ['facts/{0}/{1}.csv'.format(job_run_date,table)],
                 bucket = 'da304-staging',
                 destination_project_dataset_table = "{0}.{1}".format(BQ_STAGING_DATASET_NAME,table),
                 external_table = True,

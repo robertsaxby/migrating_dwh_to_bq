@@ -44,7 +44,7 @@ default_dag_args = {
 # DAG object.
 #tables=['account_permission','address','broker','cash_transaction','charge','commission_rate','company','company_competitor','customer','customer_account','customer_taxrate','daily_market','exchange','financial','holding','holding_history','holding_summary','industry','last_trade','news_item','news_xref','sector','security','settlement','status_type','taxrate','trade','trade_history','trade_request','trade_type','watch_item','watch_list','zip_code']
 
-tables=['trade','customer_account','security','status_type','trade_type','broker','customer','address','company','exchange','industry','sector','zip_code' ]
+tables=['customer_account','security','status_type','trade_type','broker','customer','address','company','exchange','industry','sector','zip_code' ]
 #tables=['account_permission']
 
 dag_daily = models.DAG(
@@ -65,9 +65,10 @@ def deleteStagingTablesTask(table):
 def createStagingDagTasks(table) :
      return GoogleCloudStorageToBigQueryOperator(
             task_id = 'create_staging_{0}'.format(table),
+            skip_leading_rows= 1 if table =='trade' else 0,
             field_delimiter = '|',
             schema_object = 'schema/{0}.json'.format(table),
-            source_objects = ['{0}/{1}.txt'.format(partition_date,table)],
+            source_objects = ['{0}/{1}/{2}.txt'.format('facts' if table=='trade' else 'dimension',partition_date,table)],
             bucket = 'da304_staging_uc2',
             destination_project_dataset_table = BQ_DATASET_NAME_STAGING + '.' + table,
             external_table = True,
@@ -120,17 +121,25 @@ create_trade_table = BigQueryOperator(
         dag=dag_daily)
 
 complete = DummyOperator(
-               task_id="complete_staging",
+               task_id="complete_materialization",
+               dag=dag_daily)
+
+complete_dim = DummyOperator(
+               task_id="complete_dim_staging",
+               dag=dag_daily)
+complete_dim_mat = DummyOperator(
+               task_id="complete_dim_materialization",
                dag=dag_daily)
               
 for table in tables:
-        deleteStagingTablesTask(table) >> createStagingDagTasks(table) >> complete
+        deleteStagingTablesTask(table) >> createStagingDagTasks(table) >> complete_dim
 
-create_security_table.set_upstream(complete)
-create_broker_table.set_upstream(complete)
-create_customer_account_table.set_upstream(complete)
-create_company_table.set_upstream(complete)
-create_trade_table.set_upstream(complete)
+complete_dim >> create_security_table >> complete_dim_mat
+complete_dim >> create_broker_table >> complete_dim_mat
+complete_dim >> create_customer_account_table >> complete_dim_mat
+complete_dim >> create_company_table >>complete_dim_mat
+
+complete_dim_mat >> deleteStagingTablesTask('trade') >> createStagingDagTasks('trade') >> create_trade_table >> complete
 
     # [END composer_simple_relationships]
 # [END composer_simple]

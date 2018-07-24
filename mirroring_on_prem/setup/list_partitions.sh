@@ -16,3 +16,6 @@ EOF
 bq query --use_legacy_sql=true << "EOF"
 SELECT * FROM [clbridge-analytics:da304.Web_returns$__PARTITIONS_SUMMARY__]
 EOF
+bq query --use_legacy_sql=true << "EOF"
+SELECT * FROM [clbridge-analytics:da304.sales_by_channel$__PARTITIONS_SUMMARY__]
+EOF

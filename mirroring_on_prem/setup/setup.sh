@@ -7,7 +7,8 @@ for i in {0..62}
 do
        NEXT_DATE=$(date +%Y-%m-%d -d "$DATE + $i day")
           echo "$NEXT_DATE"
-          `mkdir /tmp/${NEXT_DATE}`
-          `touch /tmp/${NEXT_DATE}/.tmp`
-          `gsutil cp -R /tmp/${NEXT_DATE} gs://da304-staging`
+#          `mkdir /tmp/${NEXT_DATE}`
+ #         `touch /tmp/${NEXT_DATE}/.tmp`
+  #        `gsutil cp -R /tmp/${NEXT_DATE} gs://da304-staging`
+          `gsutil -m mv gs://da304-staging/${NEXT_DATE} gs://da304-staging/facts`
       done
